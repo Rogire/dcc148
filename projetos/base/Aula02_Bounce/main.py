@@ -16,24 +16,26 @@ def atualiza(bola, dt):
     # obtém as coordenadas x e y da posição da bola, e a velocidade da bola no eixo y
     x, y = bola.getPosicao()
     vy = bola.getVelY()
-
-    # ***************************************************** #
-    #
-    # ************ INCLUA ABAIXO O SEU CÓDIGO ************* #
+    tocou = False
 
     # determina se as setas esquerda e direita do teclado foram pressionadas
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT]:
-        # INCLUA AQUI INSTRUÇÕES QUE DEVEM SER EXECUTADAS QUANDO O USUÁRIO PRESSIONAR A SETA ESQUERDA DO TECLADO
+        if(x-RAIO_BOLA > 0):
+            x -= VEL_X*dt
         pass
+
     if keys[pygame.K_RIGHT]:
-        # INCLUA AQUI INSTRUÇÕES QUE DEVEM SER EXECUTADAS QUANDO O USUÁRIO PRESSIONAR A SETA DIREITA DO TECLADO
+        if(x+RAIO_BOLA <LARGURA_JANELA):
+            x+=VEL_X*dt
         pass
+    
+    vy += GRAVIDADE*dt
+    y += vy*dt
 
-
-
-
-    # ***************************************************** #
+    if y > CHAO:
+        y = CHAO
+        vy = VEL_Y0
     
     # atualiza as coordenadas x e y da posição da bola, e a velocidade da bola no eixo y
     bola.setPosicao(x, y)
