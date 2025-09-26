@@ -11,12 +11,15 @@ VEL_X = 150.0                   # velocidade da bola na horizontal
 VEL_Y0 = -700.0                 # velocidade inicial da bola no eixo y
 GRAVIDADE = 1000.0              # aceleração da gravidade
 
+DT_DEP = 0
+DT_FIXO = 0.0001
+MAX_ITER = 10000
+
 def atualiza(bola, dt):
 
     # obtém as coordenadas x e y da posição da bola, e a velocidade da bola no eixo y
     x, y = bola.getPosicao()
     vy = bola.getVelY()
-    tocou = False
 
     # determina se as setas esquerda e direita do teclado foram pressionadas
     keys = pygame.key.get_pressed()
@@ -86,5 +89,12 @@ if __name__ == '__main__':
         clock.tick()
         dt = clock.get_time() / 1000.0
 
-        atualiza(bola, dt)
+        DT_DEP += dt
+        i = 0
+
+        while DT_DEP >= DT_FIXO and i < MAX_ITER:
+            atualiza(bola,DT_FIXO)
+            DT_DEP -= DT_FIXO
+            i+=1  
+        
         renderiza(window, bola, font, fpsInfo)
