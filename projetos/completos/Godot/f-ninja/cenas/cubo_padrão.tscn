@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2psn0phjdscv"]
+
+[ext_resource type="Material" uid="uid://bran26i38pga8" path="res://materiais/material_pad.tres" id="1_cb1bi"]
+
+[node name="cubo_padrão" type="CSGBox3D"]
+material_override = ExtResource("1_cb1bi")

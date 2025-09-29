@@ -1,0 +1,100 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3legwrbq0e22"]
+
+[ext_resource type="Script" uid="uid://tdilvfk1a1w5" path="res://node_3d.gd" id="1_a202f"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_a202f")
+
+[node name="Corpo" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.085209, 21.807037, -27.293095)
+size = Vector3(43.12645, 30.797396, 52.20903)
+script = ExtResource("1_a202f")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Corpo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6630669, 28.30906, 0.1278534)
+size = Vector3(33.31906, 26.265144, 45.583187)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Corpo/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8944435, 25.640877, 0.8874378)
+size = Vector3(33.31906, 26.591064, 27.66885)
+
+[node name="Braços" type="CSGBox3D" parent="Corpo/CSGBox3D2/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 0.78631, 0.6178322, 0, -0.6178322, 0.78631, -0.40428543, 10.388092, 26.836529)
+size = Vector3(1.3744842, 1.0703242, 37.269287)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Corpo/CSGBox3D2/CSGBox3D2/Braços"]
+transform = Transform3D(1, 0, 0, 0, -0.13116646, 0.9913606, 0, -0.9913606, -0.13116646, 0.7910366, 29.773079, -42.07711)
+size = Vector3(1.3744842, 1.0703242, 37.269287)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Corpo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 63, 0)
+size = Vector3(2, 3, 3)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Corpo/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11867523, -9.231522, 0)
+size = Vector3(2, 3, 3)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Corpo/CSGBox3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11867523, -9.231522, 0)
+size = Vector3(2, 3, 3)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Corpo/CSGBox3D/CSGBox3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0542564, -9.231522, 0)
+size = Vector3(2, 3, 3)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Corpo/CSGBox3D/CSGBox3D/CSGBox3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01651001, -9.231522, 0)
+size = Vector3(2, 3, 3)
+
+[node name="Cabeça" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 97, -27)
+radius = 14.0
+
+[node name="Chápeu" type="CSGCylinder3D" parent="Cabeça"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2265625, 13.034279, -0.90153885)
+radius = 12.0
+
+[node name="torre chapéu" type="CSGCylinder3D" parent="Cabeça/Chápeu"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1589012, 9.330986, 0.093774796)
+radius = 7.373535
+height = 17.81366
+
+[node name="olho" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.371948, 100.39859, -24)
+radius = 1.0
+
+[node name="boca" type="CSGSphere3D" parent="olho"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2762585, -5.5972214, -1.5462284)
+radius = 1.0
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="olho/boca"]
+transform = Transform3D(0.98699635, 0.16074257, 0, -0.16074257, 0.98699635, 0, 0, 0, 1, 0.09940529, 0.030296326, -2.6972332)
+radius = 1.0
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="olho/boca/CSGSphere3D2"]
+transform = Transform3D(0.9869963, 0.16074254, 0, -0.16074254, 0.9869963, 0, 0, 0, 1, -1.1399517, -0.17154694, -2.6972332)
+radius = 1.0
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="olho/boca/CSGSphere3D2/CSGSphere3D2"]
+transform = Transform3D(0.9869966, 0.16074258, 0, -0.16074258, 0.9869966, 0, 0, 0, 1, -1.5787697, 1.1889877, -2.617422)
+radius = 1.0
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="olho/boca/CSGSphere3D2/CSGSphere3D2/CSGSphere3D2"]
+transform = Transform3D(0.9869964, 0.16074252, 0, -0.16074252, 0.9869964, 0, 0, 0, 1, 1.4399242, 0.62112427, 10.514685)
+radius = 1.0
+
+[node name="olho2" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.838448, 99.90987, -31.706297)
+radius = 1.0
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 324.09604, 332.84155, -8.497192)
+radius = 129.0
+
+[node name="GPUParticlesAttractorSphere3D" type="GPUParticlesAttractorSphere3D" parent="CSGSphere3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.4076843, 0)
+radius = 215.6356
+
+[node name="GPUParticlesCollisionSphere3D" type="GPUParticlesCollisionSphere3D" parent="CSGSphere3D/GPUParticlesAttractorSphere3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9999695, 0)
+radius = 164.0

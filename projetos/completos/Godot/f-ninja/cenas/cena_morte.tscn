@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://r0oreaq2766b"]
+
+[ext_resource type="Material" uid="uid://cc8icmohyfkmo" path="res://materiais/prerigo.tres" id="1_tayw6"]
+
+[node name="cubo_da_MORTE" type="CSGBox3D"]
+material_override = ExtResource("1_tayw6")
