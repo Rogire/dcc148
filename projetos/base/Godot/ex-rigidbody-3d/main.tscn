@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://b48rdxhvy8my5"]
+
+[ext_resource type="Script" uid="uid://c4ubv13002ck" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://pmj2mtco6jh1" path="res://bola.tscn" id="1_ig7tw"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ig7tw"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7dm0k"]
+
+[sub_resource type="HeightMapShape3D" id="HeightMapShape3D_0xm2m"]
+map_width = 10
+map_depth = 10
+map_data = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="Main" type="Node"]
+script = ExtResource("1_0xm2m")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.045450207, 0.99896663, 0, -0.99896663, -0.045450207, 0, 1.9657917, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.98859924, -0.0033845168, 0.15053265, 0, 0.99974734, 0.022477927, -0.15057069, -0.02222166, 0.9883495, 0.14218152, 1.2385609, 4.34561)
+fov = 79.67549
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_ig7tw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("PlaneMesh_7dm0k")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("HeightMapShape3D_0xm2m")
+
+[node name="bola" parent="." instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0046532154, 0.35989487, 2.6401143)
+
+[node name="bola2" parent="." instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10680151, 0.08414155, -0.8715029)
+
+[node name="bola3" parent="." instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33074462, 0.08414155, -0.8715029)
+
+[node name="bola4" parent="." instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.753894, 0.0990599, -0.9140372)
+
+[node name="bola5" parent="." instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3998963, 0.08414155, -0.8715029)
+
+[node name="bola6" parent="." instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.92545795, 0.08414155, -0.8715029)
+
+[node name="bola7" parent="." instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4909425, 0.0990599, -0.9140372)
+
+[node name="bola8" parent="." instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026589781, 0.10366871, -0.33629966)
+
+[node name="bola9" parent="." instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5161155, 0.051158004, -0.33629966)
+
+[node name="bola10" parent="." instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.99014306, 0.10366871, -0.33629966)
+
+[node name="bola11" parent="." instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54671925, 0.106652394, -0.34480643)
+
+[node name="bola12" parent="." instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06807977, 0.10366871, 0.057081223)
+
+[node name="bola13" parent="." instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6791233, 0.106652394, 0.048574448)
+
+[node name="bola14" parent="." instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27741516, 0.100720495, 0.5073087)
